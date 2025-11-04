@@ -42,7 +42,7 @@ public class Fight : MonoBehaviour
 
         player3.SetPunteggio(-10);
 
-        Debug.Log($"Il Player 3 che ha nome : {player3.nome} e usando SetPunteggio(-10) NON potendo avere punteggio <0 il suo punteggio ora è : {player3.GetPunteggio()}");
+        Debug.Log($"Il Player 3 che ha nome : {player3.nome} ha un punteggio di : {player3.GetPunteggio()}");
 
         if (player3.IsVincitore())
         {
@@ -68,8 +68,6 @@ public class Fight : MonoBehaviour
         while (enemy.IsAlive())
         {
             player1.AttaccaNemico(enemy, dannodainfliggere);
-
-            Debug.Log($"Player1 di nome : {player1.nome} ha attaccato il nemico di nome {enemy.nome} con danno {dannodainfliggere} e il nemico ha una salute residua di {enemy.GetSalute()} punti");
 
             if (player1.IsVincitore())
             {

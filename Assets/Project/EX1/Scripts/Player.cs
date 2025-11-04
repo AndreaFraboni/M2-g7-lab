@@ -1,7 +1,10 @@
 
-
 using System.Threading.Tasks.Sources;
 using UnityEditor.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Player
 {
@@ -11,15 +14,12 @@ public class Player
     // getter
     public void SetPunteggio(int score)
     {
-        if (score >= 0)
+        if (score<0)
         {
-            punteggio = score;
+            punteggio = 0;
         }
-        else if (score < 0)
-        {
-            score = 0;
+        else
             punteggio = score;
-        }
     }
 
     //setter
@@ -40,6 +40,7 @@ public class Player
     public void AttaccaNemico(Enemy nemico, int danno)
     {
         nemico.SubisciDanno(danno);
+        Debug.Log($"Player di nome : {nome} ha attaccato il nemico di nome {nemico.nome} con danno {danno} e il nemico ha una salute residua di {nemico.GetSalute()} punti");
         punteggio += danno; // aumento punteggio del player ad ogni danno inflitto.
     }
 
