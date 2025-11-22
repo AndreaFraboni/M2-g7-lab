@@ -9,9 +9,10 @@ using UnityEngine;
 public class Player
 {
     public string nome;
+
     private int punteggio;
 
-    // getter
+    //setter
     public void SetPunteggio(int score)
     {
         if (score<0)
@@ -22,7 +23,7 @@ public class Player
             punteggio = score;
     }
 
-    //setter
+    //getter
     public int GetPunteggio()
     {
         return punteggio;
